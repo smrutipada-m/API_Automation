@@ -31,9 +31,9 @@ public class BirthdateApiTests extends InitializeTest {
         String expectedDaysCount = DateGenerator.getDateInWeeks(nextDate);
         JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"week");
         String value = jsonObj.get("message");
-        String actualDaysCount = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
-        System.out.println("Actual Value: " + actualDaysCount);
-        Assert.assertEquals(actualDaysCount,expectedDaysCount, "Week count mismatch");
+        String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
+        log.info("Actual Value from API Response : " + actualVal);
+        Assert.assertEquals(actualVal,expectedDaysCount, "Week count mismatch");
 
     }
 
@@ -45,9 +45,9 @@ public class BirthdateApiTests extends InitializeTest {
         String expectedDaysCount = DateGenerator.getDateInMonths(nextDate);
         JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"month");
         String value = jsonObj.get("message");
-        String actualDaysCount = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
-        System.out.println("Actual Value: " + actualDaysCount);
-        Assert.assertEquals(actualDaysCount,expectedDaysCount, "Months count mismatch");
+        String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
+        log.info("Actual Value from API Response : " + actualVal);
+        Assert.assertEquals(actualVal,expectedDaysCount, "Months count mismatch");
 
     }
 
@@ -59,9 +59,9 @@ public class BirthdateApiTests extends InitializeTest {
         String expectedDaysCount = DateGenerator.getDateInDays(nextDate);
         JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"day");
         String value = jsonObj.get("message");
-        String actualDaysCount = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
-        System.out.println("Actual Value: " + actualDaysCount);
-        Assert.assertEquals(actualDaysCount,expectedDaysCount, "Days count mismatch");
+        String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
+        log.info("Actual Value from API Response : " + actualVal);
+        Assert.assertEquals(actualVal,expectedDaysCount, "Days count mismatch");
 
     }
 
@@ -73,9 +73,9 @@ public class BirthdateApiTests extends InitializeTest {
         String expectedDaysCount = DateGenerator.getDateInHours(nextDate);
         JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"hour");
         String value = jsonObj.get("message");
-        String actualDaysCount = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
-        System.out.println("Actual Value: " + actualDaysCount);
-        Assert.assertEquals(actualDaysCount,expectedDaysCount, "Hour count mismatch");
+        String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
+        log.info("Actual Value from API Response : " + actualVal);
+        Assert.assertEquals(actualVal,expectedDaysCount, "Hour count mismatch");
 
     }
 
@@ -89,9 +89,9 @@ public class BirthdateApiTests extends InitializeTest {
         }
         JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"week");
         String value = jsonObj.get("message");
-        String actualDaysCount = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
-        System.out.println("Actual Value: " + actualDaysCount);
-        Assert.assertEquals(actualDaysCount,expectedDaysCount, "Week count mismatch");
+        String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
+        log.info("Actual Value from API Response : " + actualVal);
+        Assert.assertEquals(actualVal,expectedDaysCount, "Week count mismatch");
 
     }
 
@@ -105,9 +105,9 @@ public class BirthdateApiTests extends InitializeTest {
         }
         JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"month");
         String value = jsonObj.get("message");
-        String actualDaysCount = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
-        System.out.println("Actual Value: " + actualDaysCount);
-        Assert.assertEquals(actualDaysCount,expectedDaysCount, "Months count mismatch");
+        String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
+        log.info("Actual Value from API Response: " + actualVal);
+        Assert.assertEquals(actualVal,expectedDaysCount, "Months count mismatch");
 
     }
 
@@ -121,9 +121,9 @@ public class BirthdateApiTests extends InitializeTest {
         }
         JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"day");
         String value = jsonObj.get("message");
-        String actualDaysCount = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
-        System.out.println("Actual Value: " + actualDaysCount);
-        Assert.assertEquals(actualDaysCount,expectedDaysCount, "Days count mismatch");
+        String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
+        log.info("Actual Value from API Response: " + actualVal);
+        Assert.assertEquals(actualVal,expectedDaysCount, "Days count mismatch");
 
     }
 
@@ -137,9 +137,9 @@ public class BirthdateApiTests extends InitializeTest {
         }
         JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"hour");
         String value = jsonObj.get("message");
-        String actualDaysCount = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
-        System.out.println("Actual Value: " + actualDaysCount);
-        Assert.assertEquals(actualDaysCount,expectedDaysCount, "Hour count mismatch");
+        String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
+        log.info("Actual Value from API Response: " + actualVal);
+        Assert.assertEquals(actualVal,expectedDaysCount, "Hour count mismatch");
 
     }
 
@@ -147,7 +147,7 @@ public class BirthdateApiTests extends InitializeTest {
     public void getMissingParamTest(){
         JsonPath jsonObj = birthApi.getBirthdayApiResponse("2023/08/23","day");
         String value = jsonObj.get("message");
-        System.out.println("Actual Value: " + value);
+        log.info("Actual Value from API Response: " + value);
         Assert.assertEquals(value,BirthdayApiResponse.DATE_FORMAT_INCORRECT, "Hour count mismatch");
 
     }
