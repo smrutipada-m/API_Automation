@@ -65,7 +65,7 @@ public class BirthdateApiTests extends InitializeTest {
 
     }
 
-    @Test(priority = 3, description = "Get birthday in hours where date is less than current year e.g. 2023-06-11")
+    @Test(priority = 4, description = "Get birthday in hours where date is less than current year e.g. 2023-06-11")
     public void getBirthdayInHours(){
         int count = 2;
         LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.DAYS);
