@@ -1,5 +1,7 @@
 package com.xyz.utils;
 
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalUnit;
@@ -11,10 +13,10 @@ public class DateGenerator {
     /*
     Method to generate a date that can be used to manipulate the data
      */
-    public static LocalDate getDate(int quantity, TemporalUnit unit) {
+    public static LocalDate getDate(int quantity, TemporalUnit unit, Logger log) {
         LocalDate currentDate = LocalDate.now();
-        System.out.println("Current Date is: " + currentDate);
-        System.out.println("New Generated Date of Birth is: " + currentDate.minus(quantity, unit));
+        log.info("Current Date is: " + currentDate);
+        log.info("New Generated Date of Birth is: " + currentDate.minus(quantity, unit));
         return currentDate.minus(quantity, unit);
     }
 
@@ -22,42 +24,43 @@ public class DateGenerator {
     /*
     This method can be used to generate the next birthday, which can then be used to calculate the difference
      */
-    public static LocalDate getNextDate(LocalDate date) {
-        System.out.println("Next Birthday on: " + date.plus(1, ChronoUnit.YEARS));
+    public static LocalDate getNextDate(LocalDate date, Logger log) {
+        log.info("Next Birthday on: " + date.plus(1, ChronoUnit.YEARS));
         return date.plus(1, ChronoUnit.YEARS);
 
     }
 
-    public static String getDateInDays(LocalDate endDate) {
-        System.out.println("Number of Days: " + ChronoUnit.DAYS.between(LocalDate.now(), endDate));
+    public static String getDateInDays(LocalDate endDate, Logger log) {
+        log.info("Number of Days: " + ChronoUnit.DAYS.between(LocalDate.now(), endDate));
         return String.valueOf(ChronoUnit.DAYS.between(LocalDate.now(), endDate));
     }
 
-    public static String getDateInWeeks(LocalDate endDate) {
+    public static String getDateInWeeks(LocalDate endDate, Logger log) {
         //Commenting this as the o/p of api is rounding up the value
         //return String.valueOf(ChronoUnit.WEEKS.between(LocalDate.now(),endDate));
-        System.out.println("Number of Weeks: " + Integer.valueOf(getDateInDays(endDate)) / 7);
-        return String.valueOf(Integer.valueOf(getDateInDays(endDate)) / 7);
+        log.info("Number of Weeks: " + Integer.valueOf(getDateInDays(endDate,log)) / 7);
+        return String.valueOf(Integer.valueOf(getDateInDays(endDate,log)) / 7);
     }
 
-    public static String getDateInMonths(LocalDate endDate) {
+    public static String getDateInMonths(LocalDate endDate, Logger log) {
         //Commenting this as the o/p of api is rounding up the value
         //return String.valueOf(ChronoUnit.MONTHS.between(LocalDate.now(),endDate));
-        System.out.println("Number of Months: " + Integer.valueOf(getDateInDays(endDate)) / 30);
-        return String.valueOf(Integer.valueOf(getDateInDays(endDate)) / 30);
+        System.out.println("Number of Months: " + Integer.valueOf(getDateInDays(endDate,log)) / 30);
+        return String.valueOf(Integer.valueOf(getDateInDays(endDate,log)) / 30);
     }
 
-    public static String getDateInHours(LocalDate endDate) {
-        System.out.println("Number of Months: " + Integer.valueOf(getDateInDays(endDate)) / 30);
-        return String.valueOf(Integer.valueOf(getDateInDays(endDate)) * 24);
+    public static String getDateInHours(LocalDate endDate, Logger log) {
+        System.out.println("Number of Months: " + Integer.valueOf(getDateInDays(endDate,log)) / 30);
+        return String.valueOf(Integer.valueOf(getDateInDays(endDate,log)) * 24);
     }
 
-    public static boolean checkGeneratedDate(LocalDate genDate) {
+    public static boolean checkGeneratedDate(LocalDate genDate, Logger log) {
         if (genDate.isAfter(LocalDate.now())) {
-            System.out.println("Input Date of Birth is Invalid!!");
+            log.info("Input Date of Birth is Invalid!!");
             return false;
 
         } else {
+            log.info("Input Date of Birth is valid..");
             return true;
         }
 

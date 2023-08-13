@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <suite name="All Test Suite">
-    <test name="D:/Explore/APIProjects/APIAutomation">
+    <test name="Birthday Api Tests">
+        <parameter name="countVal" value="${count}"></parameter>
         <classes>
             <class name="com.xyz.tests.BirthdateApiTests"/>
         </classes>

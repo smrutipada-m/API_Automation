@@ -3,17 +3,14 @@ package com.xyz.tests;
 import com.xyz.apiresponses.BirthdayApiResponse;
 import com.xyz.utils.BirthdayAPITimeCount;
 import com.xyz.utils.DateGenerator;
-import com.xyz.utils.Log;
 import io.restassured.path.json.JsonPath;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import java.sql.SQLOutput;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
+
 
 
 public class BirthdateApiTests extends InitializeTest {
@@ -24,12 +21,13 @@ public class BirthdateApiTests extends InitializeTest {
     returning the correct response
      */
     @Test(priority = 1, description = "TC001-Get birthday in week where input week is less than the current e.g. 2023-07-27")
-    public void getBirthdayInWeeksHistoricalTest(){
-        int count = 1;
-        LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.WEEKS);
-        LocalDate nextDate = DateGenerator.getNextDate(generatedDate);
-        String expectedDaysCount = DateGenerator.getDateInWeeks(nextDate);
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"week");
+    @Parameters({"countVal"})
+    public void getBirthdayInWeeksHistoricalTest(Integer countVal){
+
+        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.WEEKS, log);
+        LocalDate nextDate = DateGenerator.getNextDate(generatedDate, log);
+        String expectedDaysCount = DateGenerator.getDateInWeeks(nextDate, log);
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"week", log);
         String value = jsonObj.get("message");
         String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
         log.info("Actual Value from API Response : " + actualVal);
@@ -38,12 +36,12 @@ public class BirthdateApiTests extends InitializeTest {
     }
 
     @Test(priority = 2, description = "TC-002-Get birthday in months where input month is less than currente.g. 2023-06-11")
-    public void getBirthdayInMonthsHistoricalTest(){
-        int count = 2;
-        LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.MONTHS);
-        LocalDate nextDate = DateGenerator.getNextDate(generatedDate);
-        String expectedDaysCount = DateGenerator.getDateInMonths(nextDate);
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"month");
+    @Parameters({"countVal"})
+    public void getBirthdayInMonthsHistoricalTest(Integer countVal){
+        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.MONTHS , log);
+        LocalDate nextDate = DateGenerator.getNextDate(generatedDate, log);
+        String expectedDaysCount = DateGenerator.getDateInMonths(nextDate, log);
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"month", log);
         String value = jsonObj.get("message");
         String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
         log.info("Actual Value from API Response : " + actualVal);
@@ -52,12 +50,13 @@ public class BirthdateApiTests extends InitializeTest {
     }
 
     @Test(priority = 3, description = "TC-003-Get birthday in days where input date is less than current e.g. 2023-08-10")
-    public void getBirthdayInDaysHistoricalTest(){
-        int count = 2;
-        LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.DAYS);
-        LocalDate nextDate = DateGenerator.getNextDate(generatedDate);
-        String expectedDaysCount = DateGenerator.getDateInDays(nextDate);
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"day");
+    @Parameters({"countVal"})
+    public void getBirthdayInDaysHistoricalTest(Integer countVal){
+//        int count = 2;
+        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.DAYS, log);
+        LocalDate nextDate = DateGenerator.getNextDate(generatedDate, log);
+        String expectedDaysCount = DateGenerator.getDateInDays(nextDate, log);
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"day", log);
         String value = jsonObj.get("message");
         String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
         log.info("Actual Value from API Response : " + actualVal);
@@ -66,12 +65,13 @@ public class BirthdateApiTests extends InitializeTest {
     }
 
     @Test(priority = 4, description = "TC-004-Get birthday in hours where input hour is less than current e.g. 2023-06-11")
-    public void getBirthdayInHoursHistoricalTest(){
-        int count = 2;
-        LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.DAYS);
-        LocalDate nextDate = DateGenerator.getNextDate(generatedDate);
-        String expectedDaysCount = DateGenerator.getDateInHours(nextDate);
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"hour");
+    @Parameters({"countVal"})
+    public void getBirthdayInHoursHistoricalTest(Integer countVal){
+
+        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.DAYS, log);
+        LocalDate nextDate = DateGenerator.getNextDate(generatedDate, log);
+        String expectedDaysCount = DateGenerator.getDateInHours(nextDate, log);
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"hour", log);
         String value = jsonObj.get("message");
         String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
         log.info("Actual Value from API Response : " + actualVal);
@@ -80,14 +80,15 @@ public class BirthdateApiTests extends InitializeTest {
     }
 
     @Test(priority = 5, description = "TC-005-Get birthday in weeks where input week is greater than the current e.g. 2023-07-27")
-    public void getBirthdayInWeeksFutureTest(){
-        int count = -1;
-        LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.WEEKS);
+    @Parameters({"countVal"})
+    public void getBirthdayInWeeksFutureTest(Integer countVal){
+
+        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.WEEKS, log);
         String expectedDaysCount = null;
-        if(!DateGenerator.checkGeneratedDate(generatedDate)){
+        if(!DateGenerator.checkGeneratedDate(generatedDate, log)){
             expectedDaysCount = DateGenerator.INCORECT_DATE_OF_BIRTH;
         }
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"week");
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"week", log);
         String value = jsonObj.get("message");
         String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
         log.info("Actual Value from API Response : " + actualVal);
@@ -96,14 +97,15 @@ public class BirthdateApiTests extends InitializeTest {
     }
 
     @Test(priority = 6, description = "TC-006-Get birthday in months where input month is greater than currente.g. 2023-06-11")
-    public void getBirthdayInMonthsFutureTest(){
-        int count = -2;
-        LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.MONTHS);
+    @Parameters({"countVal"})
+    public void getBirthdayInMonthsFutureTest(Integer countVal){
+
+        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.MONTHS, log);
         String expectedDaysCount = null;
-        if(!DateGenerator.checkGeneratedDate(generatedDate)){
+        if(!DateGenerator.checkGeneratedDate(generatedDate, log)){
             expectedDaysCount = DateGenerator.INCORECT_DATE_OF_BIRTH;
         }
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"month");
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"month", log);
         String value = jsonObj.get("message");
         String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
         log.info("Actual Value from API Response: " + actualVal);
@@ -112,14 +114,15 @@ public class BirthdateApiTests extends InitializeTest {
     }
 
     @Test(priority = 7, description = "TC-007-Get birthday in days where input date is greater than current e.g. 2023-08-10")
-    public void getBirthdayInDaysFutureTest(){
-        int count = -2;
-        LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.DAYS);
+    @Parameters({"countVal"})
+    public void getBirthdayInDaysFutureTest(Integer countVal){
+
+        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.DAYS, log);
         String expectedDaysCount = null;
-        if(!DateGenerator.checkGeneratedDate(generatedDate)){
+        if(!DateGenerator.checkGeneratedDate(generatedDate, log)){
             expectedDaysCount = DateGenerator.INCORECT_DATE_OF_BIRTH;
         }
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"day");
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"day", log);
         String value = jsonObj.get("message");
         String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
         log.info("Actual Value from API Response: " + actualVal);
@@ -128,14 +131,15 @@ public class BirthdateApiTests extends InitializeTest {
     }
 
     @Test(priority = 8, description = "TC-008-Get birthday in hours where input hour is greater than current e.g. 2023-06-11")
-    public void getBirthdayInHoursFutureTest(){
-        int count = -2;
-        LocalDate generatedDate = DateGenerator.getDate(count, ChronoUnit.DAYS);
+    @Parameters({"countVal"})
+    public void getBirthdayInHoursFutureTest(Integer countVal){
+
+        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.DAYS,log) ;
         String expectedDaysCount = null;
-        if(!DateGenerator.checkGeneratedDate(generatedDate)){
+        if(!DateGenerator.checkGeneratedDate(generatedDate, log)){
             expectedDaysCount = DateGenerator.INCORECT_DATE_OF_BIRTH;
         }
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"hour");
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse(String.valueOf(generatedDate),"hour", log);
         String value = jsonObj.get("message");
         String actualVal = BirthdayAPITimeCount.getTimeValue(jsonObj.get("message"));
         log.info("Actual Value from API Response: " + actualVal);
@@ -145,7 +149,7 @@ public class BirthdateApiTests extends InitializeTest {
 
     @Test(priority = 9, description = "TC-009-Get Response when date format is incorrect")
     public void getMissingParamTest(){
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse("2023/08/23","day");
+        JsonPath jsonObj = birthApi.getBirthdayApiResponse("2023/08/23","day", log);
         String value = jsonObj.get("message");
         log.info("Actual Value from API Response: " + value);
         Assert.assertEquals(value,BirthdayApiResponse.DATE_FORMAT_INCORRECT, "Hour count mismatch");
