@@ -6,5 +6,5 @@ Pre-requisites
    
 # Steps to run this project:
 1. Clone the project
-2. Navigate to the dir where the POM is located, and execute mvn clean install
-3. Run mvn test to execute the test(optional)
+2. Navigate to the dir where the POM is located, and execute mvn clean
+3. Run mvn clean test -Dcount={n} to execute the test, where n is > 0 and < 365. This will autogenarate the date and run the tests
