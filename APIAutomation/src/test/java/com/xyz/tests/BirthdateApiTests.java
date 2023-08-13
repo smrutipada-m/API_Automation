@@ -83,7 +83,7 @@ public class BirthdateApiTests extends InitializeTest {
     @Parameters({"countVal"})
     public void getBirthdayInWeeksFutureTest(Integer countVal){
 
-        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.WEEKS, log);
+        LocalDate generatedDate = DateGenerator.getDate(-countVal, ChronoUnit.WEEKS, log);
         String expectedDaysCount = null;
         if(!DateGenerator.checkGeneratedDate(generatedDate, log)){
             expectedDaysCount = DateGenerator.INCORECT_DATE_OF_BIRTH;
@@ -100,7 +100,7 @@ public class BirthdateApiTests extends InitializeTest {
     @Parameters({"countVal"})
     public void getBirthdayInMonthsFutureTest(Integer countVal){
 
-        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.MONTHS, log);
+        LocalDate generatedDate = DateGenerator.getDate(-countVal, ChronoUnit.MONTHS, log);
         String expectedDaysCount = null;
         if(!DateGenerator.checkGeneratedDate(generatedDate, log)){
             expectedDaysCount = DateGenerator.INCORECT_DATE_OF_BIRTH;
@@ -117,7 +117,7 @@ public class BirthdateApiTests extends InitializeTest {
     @Parameters({"countVal"})
     public void getBirthdayInDaysFutureTest(Integer countVal){
 
-        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.DAYS, log);
+        LocalDate generatedDate = DateGenerator.getDate(-countVal, ChronoUnit.DAYS, log);
         String expectedDaysCount = null;
         if(!DateGenerator.checkGeneratedDate(generatedDate, log)){
             expectedDaysCount = DateGenerator.INCORECT_DATE_OF_BIRTH;
@@ -134,7 +134,7 @@ public class BirthdateApiTests extends InitializeTest {
     @Parameters({"countVal"})
     public void getBirthdayInHoursFutureTest(Integer countVal){
 
-        LocalDate generatedDate = DateGenerator.getDate(countVal, ChronoUnit.DAYS,log) ;
+        LocalDate generatedDate = DateGenerator.getDate(-countVal, ChronoUnit.DAYS,log) ;
         String expectedDaysCount = null;
         if(!DateGenerator.checkGeneratedDate(generatedDate, log)){
             expectedDaysCount = DateGenerator.INCORECT_DATE_OF_BIRTH;
