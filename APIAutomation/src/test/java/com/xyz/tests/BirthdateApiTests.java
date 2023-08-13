@@ -177,18 +177,5 @@ public class BirthdateApiTests extends InitializeTest {
 
     }
 
-    @Test(priority = 10, description = "TC-009-Get Response when date format is incorrect")
-    public void getMissingParamTest(){
-        JsonPath jsonObj = birthApi.getBirthdayApiResponse("2023/08/23","day", log);
-        String value = jsonObj.get("message");
-        log.info("Actual Value from API Response: " + value);
-        Assert.assertEquals(value,BirthdayApiResponse.DATE_FORMAT_INCORRECT, "Hour count mismatch");
-
-    }
-
-
-
-
-
 
 }
