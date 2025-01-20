@@ -1,0 +1,629 @@
+Date: Mon, 20 Jan 2025 03:02:20 +0000 (UTC)
+Message-ID: <569157251.621227.1737342140806@confluence-prd00000T>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_621226_1323309353.1737342140806"
+
+------=_Part_621226_1323309353.1737342140806
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>QA Guidelines</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: #000;
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>QA Guidelines</h1>
+    <div class=3D"Section1">
+        <p><span style=3D"color: rgb(36,36,36);">This document details the =
+specific ownership, testing strategy, and release process from a QA perspec=
+tive . It outlines the roles and responsibility of each of the QA members a=
+nd the governance&nbsp;</span></p>
+<p><br></p>
+<h3 id=3D"QAGuidelines-SCOPE"><span style=3D"color: rgb(0,51,0);"><strong>S=
+COPE</strong></span></h3>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong><strong>Features to =
+be tested</strong></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;&lt;List all=
+ the features finalized for the Sprint&gt;&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This can be conf=
+luence Page , Asana Dashboards with Clear scope in each of the user stories=
+ , Word Document&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Regression=
+ test case should be identified and plan created for their execution before=
+ every release.</p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Features not to be tested</st=
+rong></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;&lt;A=
+ny items called out not to be part of current test scope&gt;&gt;</p>
+<p><br></p>
+<h3 id=3D"QAGuidelines-TestApproach"><strong>Test Approach</strong></h3>
+<p><strong>&nbsp;</strong></p>
+<p><br></p>
+<ol>
+<li><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Manual/Functio=
+nal</strong>
+<ol>
+<li style=3D"list-style-type: none;">
+<ol>
+<li>Initial test plan to be prepared and shared for approval .[<strong>Owne=
+r - QA Lead]</strong></li>
+<li>Test plan to be updated on a daily basis to capture on the overall prog=
+ress on a daily basis.[<strong>Owner - QA Lead</strong>]</li>
+<li>Test case<span>&nbsp;</span><strong>MUST</strong><span>&nbsp;</span>be =
+reviewed by the PO\Product before starting test execution for any user stor=
+y, if review comment has not been received, test execution will not be comm=
+enced.<span>&nbsp;</span><strong>[Owner =E2=80=93 QA Member]</strong><stron=
+g>For Release regression , Test cases pack must be identified and reviewed =
+and agreed with product so that None of the Major use case is left for Regr=
+ession execution</strong></li>
+<li>QA member to prepare the test matrix which maps test cases to respectiv=
+e requirement. This will ensure the coverage for requirements.<span>&nbsp;<=
+/span><strong>[Owner =E2=80=93 QA Member]</strong></li>
+<li>Any defects identified to be fixed on priority. Open defects to be disc=
+ussed with stakeholders.<strong>[Owner - QA lead]</strong></li>
+<li>Regression pack<span>&nbsp;</span><strong>MUST</strong><span>&nbsp;</sp=
+an>include all P1 cases.<span>&nbsp;</span><strong>[Owner =E2=80=93 QA Memb=
+er]</strong></li>
+<li>Test artifacts to be signed off.<strong>[Owner - Test Lead/Manager]</st=
+rong></li>
+<li>Output which here is the test case document should also include the typ=
+e of test (Sanity, Regression etc...)<span>&nbsp;</span><strong>[Owner =E2=
+=80=93 QA Lead to ensure that the process is followed]</strong></li>
+<li>All story level testing<span>&nbsp;</span><strong>MUST</strong><span>&n=
+bsp;</span>be executed on QA env unless and otherwise agreed within the scr=
+um team and by PO, and then on the subsequent environments like UAT and PPE=
+</li>
+<li>Test plan to be updated for every release, with details about the stori=
+es, defects etc. All QA artifacts such as Test Plan, test cases, Release re=
+port needs to be signed off by PO and QA lead.<span>&nbsp;</span><strong>[O=
+wner =E2=80=93 TPM and QA Lead]</strong></li>
+</ol></li>
+</ol></li>
+<li><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Automation<spa=
+n>&nbsp;</span>Testing</strong>&nbsp;=20
+<ol>
+<li style=3D"list-style-type: none;">
+<ol>
+<li><strong>&nbsp;</strong>Regression<span>&nbsp;</span><strong>MUST</stron=
+g><span>&nbsp;</span>be done using Automation only, if all cases are not au=
+tomated, the cases getting executed manually must be very clearly documente=
+d and agreed with team and PO.<span> PO should seek approval from <strong>L=
+akshmi Narayanan, Arun Kumar/Sharma-Mishra</strong>&nbsp;for such exception=
+s.&nbsp;</span><strong>[Owner =E2=80=93 QA Member]</strong></li>
+<li>All new features developed as part of sprint should be automated before=
+ marking story as done.<span>&nbsp;</span><strong>[Owner =E2=80=93 QA Membe=
+r]</strong></li>
+<li>QA member to discuss on the automation effort with Lead for any new fea=
+tures and discuss with Scrum Master to mark the task as a candidate for spr=
+int.&nbsp;<strong>[Owner =E2=80=93 QA Member]</strong></li>
+<li>Automation jobs to be run on timely basis in all the environments such =
+as QA, UAT, PPE.&nbsp;<strong>[Owner =E2=80=93 QA Member]</strong></li>
+<li>Any failures in automation suites to be picked up on priority and fixed=
+. If automation run has found any issue, the same should be tracked via a t=
+icket.&nbsp;<strong>[Owner =E2=80=93 QA Member]</strong></li>
+<li>QA member to discuss on the Automation backlogs with their leads and pl=
+an to accommodate some of these items in the sprints.</li>
+<li>All production incidents should be analyzed and added to the automation=
+ suite on priority.<span>&nbsp;</span><strong>[Owner =E2=80=93 QA Member]</=
+strong></li>
+</ol></li>
+</ol></li>
+<li><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Performa=
+nce Testing</strong>
+<ol>
+<li style=3D"list-style-type: none;">
+<ol>
+<li><strong>&nbsp;</strong>Performance test suite (using tools that capture=
+s the optimal page load time) to be owned and run by QA member on the all t=
+he environments =E2=80=93 QA, UAT, PPE etc.</li>
+<li><strong>&nbsp;</strong>Test results to be compared with previous runs a=
+nd reports to be shared with all stakeholders.<span>&nbsp;</span><strong>[O=
+wner =E2=80=93 QA Member]</strong></li>
+<li><strong>&nbsp;</strong>Any spike in numbers to be highlighted.<span>&nb=
+sp;</span><strong>[Owner =E2=80=93 QA Member]</strong></li>
+</ol></li>
+</ol></li>
+</ol>
+<h4 id=3D"QAGuidelines-Governance:"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Governance:</strong></h4>
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li><strong>QA Lead</strong><span>&nbsp;</span>=E2=80=93 To ensure that abo=
+ve mentioned approaches are followed for every release.</li>
+<li><strong>Scrum Master</strong><span>&nbsp;</span>=E2=80=93 Getting sign-=
+off on the test artifacts from the PO.</li>
+<li><strong>Overall owner</strong><span>&nbsp;</span>=E2=80=93 QA Manager -=
+ to continuous Audit QA artifacts that everything is getting followed and r=
+aise discrepancy with the Scrum master</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<h3 id=3D"QAGuidelines-DefectManagement"><strong>Defect Management</strong>=
+&nbsp;</h3>
+<ol>
+<li style=3D"list-style-type: none;">
+<ol>
+<li>Each QA member&nbsp;<strong>MUST</strong><span>&nbsp;</span>log the def=
+ects in the Defect Management Tools (Jira/Asana), if any blocker is raised,=
+ same should be broadcasted in all the channels.</li>
+<li>Defects should be discussed in the daily status meetings and prioritize=
+d based on severity.</li>
+<li>Any delay in issue-fix, resulting in overall delay of test execution sh=
+ould be brought to the attention of QA Lead and Manager.</li>
+<li>Daily status report needs to be shared with all stake holder, clearly s=
+tating issues which&nbsp;<strong>DEFECTS</strong><span>&nbsp;</span>needs u=
+rgent attention for release.<span>&nbsp;</span><strong>[Owner =E2=80=93 QA =
+Lead | QA Manager]</strong></li>
+<li>QA members raising a DEFECT, should tag the SEVERITY and the PRIORITY.<=
+/li>
+</ol></li>
+</ol>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &n=
+bsp; &nbsp; &nbsp;&nbsp;</p>
+<div class=3D"table-wrap">
+<table class=3D"relative-table wrapped confluenceTable" style=3D"width: 108=
+5.11px;">
+<colgroup class=3D"">
+<col class=3D"" style=3D"width: 40.6528px;">
+<col class=3D"" style=3D"width: 78.9306px;">
+<col class=3D"" style=3D"width: 964.639px;">
+</colgroup>
+<thead class=3D"">
+<tr class=3D"">
+<th style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+h"><p><strong>ID</strong></p></th>
+<th style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+h"><p><strong>Severity</strong></p></th>
+<th style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+h"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody class=3D"">
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>1</p></td>
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>Critical</p></td>
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>Errors which completely puts the test execution on hold and team is u=
+nable to proceed.</p></td>
+</tr>
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>2</p></td>
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>Major</p></td>
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>Errors that have impact on certain part of the system, but team can f=
+ocus on other areas.</p></td>
+</tr>
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>3</p></td>
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>Medium</p></td>
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>Errors that affect non-critical functionalities</p></td>
+</tr>
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>4</p></td>
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>Minor</p></td>
+<td style=3D"text-align: left;vertical-align: middle;" class=3D"confluenceT=
+d"><p>Errors that do not harm the system in a critical way.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<div class=3D"table-wrap">
+<table class=3D"relative-table wrapped confluenceTable" style=3D"width: 108=
+5.11px;">
+<colgroup class=3D"">
+<col class=3D"" style=3D"width: 40.6528px;">
+<col class=3D"" style=3D"width: 76.2778px;">
+<col class=3D"" style=3D"width: 967.292px;">
+</colgroup>
+<thead class=3D"">
+<tr class=3D"">
+<th style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTh">=
+<p><strong>ID</strong></p></th>
+<th style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTh">=
+<p><strong>Priority</strong></p></th>
+<th style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTh">=
+<p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody class=3D"">
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>1</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>URGENT</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>To be fixed immediately</p></td>
+</tr>
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>2</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>HIGH</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>Need to be fixed as soon as possible.</p></td>
+</tr>
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>3</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>MEDIUM</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>Fix upon availability of time</p></td>
+</tr>
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>4</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>LOW</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>Fix after all the other priority defects is closed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><br></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp; Governance:</strong></p>
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li><strong>QA Lead</strong><span>&nbsp;</span>=E2=80=93 To ensure that abo=
+ve mentioned practices are followed for every release.</li>
+<li><strong>Scrum Master</strong><span>&nbsp;</span>=E2=80=93 Getting timel=
+y resolution on the<span>&nbsp;</span><strong>DEFECTS</strong>.</li>
+<li><strong>Overall owner</strong><span>&nbsp;</span>=E2=80=93 QA Manager -=
+ to continuous Audit QA artifacts that everything is getting followed and r=
+aise discrepancy with the Scrum master</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br></p>
+<h3 id=3D"QAGuidelines-ResourcesandEnvironments"><strong>Resources and Envi=
+ronments</strong></h3>
+<p><br></p>
+<p><br></p>
+<div class=3D"table-wrap">
+<table class=3D"relative-table wrapped confluenceTable" style=3D"width: 101=
+5.96px;">
+<colgroup class=3D"">
+<col class=3D"" style=3D"width: 103.25px;">
+<col class=3D"" style=3D"width: 911.819px;">
+</colgroup>
+<thead class=3D"">
+<tr class=3D"">
+<th style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTh">=
+<p><strong>Tools</strong></p></th>
+<th style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTh">=
+<p><strong>Links</strong></p></th>
+</tr>
+</thead>
+<tbody class=3D"">
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>Test Cases Management</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p><strong>&nbsp;Git / Zephyr</strong></p></td>
+</tr>
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p>Defect Management</p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p><strong>&nbsp;Jira/Asana</strong></p></td>
+</tr>
+<tr class=3D"">
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p><strong>&nbsp;</strong></p></td>
+<td style=3D"text-align: left;vertical-align: top;" class=3D"confluenceTd">=
+<p><strong>&nbsp;</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Governance:</strong></p>
+<p><strong>Test Lead</strong><span>&nbsp;</span>to ensure that QA Member pu=
+blishes all the test artifacts in the above mentioned tools.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><br></p>
+<h3 id=3D"QAGuidelines-Entry/ExitCriteria"><strong>Entry/Exit Criteria</str=
+ong></h3>
+<ol>
+<li style=3D"list-style-type: none;">
+<ol>
+<li><strong>Entry Criteria</strong>
+<ol>
+<li><strong>QA Env.</strong><span>&nbsp;</span>=E2=80=93 Basic Sanity Done =
+for feature by Dev and handed over to QA<strong>. [Owner =E2=80=93 QA Lead]=
+</strong></li>
+<li><strong>UAT Env.</strong><span>&nbsp;</span>=E2=80=93 Sign off received=
+ from QA on QA Env. with evidence and shared with all relevant stake holder=
+s, UAT completion done with PO for user stories</li>
+</ol></li>
+</ol></li>
+</ol>
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li><strong>&nbsp;&nbsp;&nbsp;&nbsp; QA Signoff: QA Lead</strong></li>
+<li><strong>&nbsp; &nbsp; &nbsp;UAT PO Signoff: PO</strong></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<ol>
+<li style=3D"list-style-type: none;">
+<ol>
+<li style=3D"list-style-type: none;">
+<ol>
+<li><strong>PPE</strong>: Sign off received from QA for UAT Env. with evide=
+nce</li>
+</ol></li>
+</ol></li>
+</ol>
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li style=3D"list-style-type: none;">
+<ul>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span><strong>QA Signo=
+ff: QA Lead</strong></li>
+<li><strong>&nbsp; &nbsp; &nbsp; &nbsp;PPE PO Signoff: PO</strong></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Governance:</strong></p>
+<p><strong>Scrum master</strong><span>&nbsp;</span>to ensure that UAT is do=
+ne by PO with QA team for UAT sign off, any exception must be agreed, docum=
+ented and known to all stake holders.<span>&nbsp;</span><strong>Scrum maste=
+r</strong><span>&nbsp;</span>to ensure that PPE signoff is received, and al=
+l the issues identified in any environment are either marked as Fixed or de=
+ferred</p>
+    </div>
+</body>
+</html>
+------=_Part_621226_1323309353.1737342140806--
